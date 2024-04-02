@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-
+<body>
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
 
@@ -22,11 +22,9 @@
     <br />
     <br />
 
-<p>Bilder laden</p>
+<form action="index.php" method="POST">
 
-<form method="post">
-
-<select style="background:  rgb(210, 212, 199);color: rgb(42, 11, 43);height:28px; width: 120px; font-size:18px"; name="LED_1">
+<select size="1" name="test" onchange='document.getElementById("test").innerHTML = this.value;'>
 <option>Bild_1</ option>
 <option>Bild_2</ option>
 <option>Bild_3</ option>
@@ -77,7 +75,7 @@
 
 <?php
 
-Aktueller Wert: <span id="LED_1"></span>
+Aktueller Wert: <span id="test"></span>
 <br />
 
     
