@@ -7,8 +7,8 @@
 <head>
 
 <body>
-
-<form method="post">
+<?php
+ <form method="post">
 
 <select style="background:  rgb(210, 212, 199);color: rgb(42, 11, 43);height:28px; width: 120px; font-size:18px"; name="LED_1">
 <option>Bild_1</ option>
@@ -20,9 +20,6 @@
 
 <br />
 
-<?php
-
-
 $hallo1 = $_POST['LED_1'];
 
 if($hallo1 == Bild_1) {
@@ -30,5 +27,5 @@ if($hallo1 == Bild_1) {
 <br />
 echo "Bild_1"
 
-<?php
+
 }  
