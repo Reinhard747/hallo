@@ -3,7 +3,8 @@
 <head></head>
 <body>
 <form action="index.php" method="POST">
-<select size="1" name="zahl3" onchange="location = alert( this.options[this.selectedIndex].value);">
+
+<select size="1" name="test" onchange='document.getElementById("test").innerHTML = this.value;'>
 <option value="0">0</option>
 <option value="1">1</option>
 <option value="2">2</option>
@@ -16,12 +17,16 @@
 <option value="9">9</option>
 <option value="10">10</option>
 </select>
+</form>
 
 <?php
-$zahl3 = $_POST["zahl3"];
-
+$test = $_POST["test"];
+echo $test;
 ?>
 
-echo $zahl3;  
 
-  <body>  
+  
+</body>
+</html>
+
+
