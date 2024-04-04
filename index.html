@@ -14,20 +14,27 @@
 <option>Bild_1</ option>
 <option>Bild_2</ option>
 <option>Bild_3</ option>
-
-
 </select>
 <br />
 
-$hallo1 = $_POST['LED_1'];
- 
-<?php
+<form method="post">
+<button OnClick="submit" name="button6"> jetzt laden</button>
 
-if($hallo1 == Bild_2) {
+</form>
+</div>
 
 <br />
-echo "Bild_2"
- ?>
+
+<?php
  
- }
-  
+if(isset($_POST['button6'])){ 
+
+$hallo1 = $_POST['LED_1'];
+
+if($hallo1 == Bild_1) {
+ ?>
+<br />
+echo "Bild_1"
+
+<?php
+}  
