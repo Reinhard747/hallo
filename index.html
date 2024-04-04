@@ -11,13 +11,21 @@
 <form action="index.php" method="POST">
 
 
-<select size="1" name="test" onchange='document.getElementById("test").innerHTML = this.value;'>
+<select size="1" name="zahl3" onchange='document.getElementById("test").innerHTML = this.value;'>
 <option value="0">0</option>
 <option value="1">1</option>
 <option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+
+ 
 </select>
 </form> 
 
  
-Aktueller Wert: <span id="test"></span>
+<?php
+$zahl3 = $_POST["zahl3"];
+echo $zahl3;
+?>
 
