@@ -22,22 +22,23 @@
     <br />
     <br />
     
-<p>Bilder laden</p>
-
-
-    
-<form method="post">
-
-<select size="1" name="test" onchange='document.getElementById("test").innerHTML = this.value;'>
+<form action="index.php" method="POST">
+<select size="1" name="zahl3" onchange="location = alert( this.options[this.selectedIndex].value);">
 <option value="0">0</option>
-<option value=<img src="/Bilder1/Bild2.ipg"></option>
-<option value="2">Bild_2</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
 </select>
-<br />
-    
 
-</form>
-    
-
-    <span id="test"></span></b><br/>    
+<?php
+$zahl3 = $_POST["zahl3"];
+echo $zahl3;
+?>
 </body>
