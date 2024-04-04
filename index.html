@@ -7,7 +7,7 @@
 <head>
 
 <body>
-<?php
+
  <form method="post">
 
 <select style="background:  rgb(210, 212, 199);color: rgb(42, 11, 43);height:28px; width: 120px; font-size:18px"; name="LED_1">
@@ -22,9 +22,12 @@
 <?php
  
  $hallo1 = $_POST['LED_1'];
-?>
+
  
- if($hallo1 == Bild_2) then echo "Bild_2"
+ if($hallo1 == Bild_2) {
+  ?>
+  
+  echo "Bild_2"
 
  }  
 
