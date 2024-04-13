@@ -5,10 +5,14 @@
 <p>Bilder laden</p>
 
   
-<select style="background:  rgb(210, 212, 199);color: rgb(42, 11, 43);height:28px; width: 120px; font-size:18px"; name="LED_1">
-<option>Bild_1</ option>
-<option>Bild_2</ option>
-<option>Bild_3</ option>
+<form action="index.php" method="POST">
+<select size="1" name="zahl3" onchange="location = alert( this.options[this.selectedIndex].value);">
+
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+
 </select>
 
 <br />
@@ -27,7 +31,7 @@
   
 if(isset($_POST['button6'])){ 
 
-$hallo1 = $_POST['LED_1'];
+$hallo1 = $_POST['zahl3'];
 
 
 echo $hallo1;
