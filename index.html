@@ -1,30 +1,199 @@
 <html>
-<head></head>
+<head>
+
 <body>
 
-<p>Bilder laden</p>
-
-  
-<form action="index.php" method="POST">
-<select size="1" name="test" onchange='document.getElementById("test").innerHTML = this.value;'>
-
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-
-</select>
-
-<br />
-
-  
-</form>
-
-<?php
- //This Statement stores data in variable
- $test = '<span id ="test" ></span>'; 
- //this is for printing variable that contains data
- echo $test;
-?>
+ 
+ 
+Bauanleitung MDBT42Q mit DL2416T und Temperatuanzeige, 2 Versorgungsspannugen 3,0 bis 5,0 Volt und über 5 Volt bis 16,0 Volt, ohne Treiber aber mit Software.
+ 
+Fertiger Adapter DL2416T Anzeige mit MDBT42Q siehe Bild_1, Bild_2, Bild_3 und Bild_4
+ 
+Komplette Verdrahtung. Siehe Bild_5, Bild_6, Bild_7 und Bild_8
+ 
+Benötigt werden folgende Bauteile:
+1 Siemens DL2416T, 4 fach Anzeige Alphanumerisch
+1 Lochrasterplatine , Hartpapier 50X100mm H25PR050-----------------------0,99€
+2 Stiftleisten 2,54mm 1X12 H=10,8mm gerade BKL10120911 a)0,60€-----1,20€
+2 Jumper 2,54SW Kurzschlussbrücke a)0,04€-----------------------------------0,08€
+1 Präzisionsfassung 24 Polig , RM 2,54-------------------------------------------0,51€
+1 Präz.-Buchsenleiste 20 Polig MPE 115-1-020----------------------------------1,20€
+2 JST PH CKB Crimpkontakte a)0,03€-------------------------------------------0,06€
+1 JST PH2P BU , Stecker------------------------------------------------------------0,04€
+1 JST PH2P ST , Buchse-------------------------------------------------------------0,11€
+Silberdraht 0,5mm cirka 50 cm
+Lötzinn 1mm
+ 
+Für die Versorgungsspannug benutze ich eine Powerbank 5 Volt 2200mA.
+ 
+Leiterplatte 1 zusägen auf 7 x 11 Löcher = Dummy.
+Leiterplatte 2 zusägen auf 7 x 13 Löcher = Adapter.
+Die IC Fassung 24-polig auf 18-polig kürzen und den Mittelsteg entfernen Pin 9 so kürzen dass der Pin 9 auf der Leiterplatte aufliegt.
+ 
+Wir beginnen mit Leiterplatte 2, 7 x 13 Löcher
+Jetzt nehmen wir die Batterieanschlussbuchse JST PH2P ST und kleben sie mit Sekundenkleber von unten auf die Lötaugen.
+Der Schlitz muss nach außen zeigen, ich habe die Buchse gleich mit rot und schwarz gekennzeichnet. Siehe Bild_9 bis Bild_11
+Nun warten wir bis der Kleber ausgehärtet ist.
+ 
+In der Zwischenzeit bauen wir einen MDBT42Q Dummy
+Wir nehmen die Leiterplatte 1, 7 x 11 Löcher, und löten eine Stiftleiste 6-polig und eine Stiftleite 7-polig auf der Platine.
+Die Leiterplatte 2 nehmen wir als Unterteil für den Pinabstand
+Jetzt nehmen wir die Präz.-Buchsenleiste 20 Polig und trennen einmal 6 Buchsen und einmal 7 Buchsen ab, am besten mit einer Puksäge einen Kontakt durchsägen.
+Die beiden Buchsenleisten setzen wir auf die Stiftleisten drauf, jetzt ist der Dummy fertig und wird später verarbeitet. Siehe Bild_12 bis Bild_15
+ 
+Weiter mit Leiterplatte 2
+Mit einem Silberdraht ca. 6cm
+Am Anfang vom Silberdraht biegen wir eine kleine Öse die um den gekürzten IC Pin 9 herum gelegt wird, dann weiter bis IC Pin 5
+eine weitere Bücke von IC Pin 5 weiter bis IC Pin 3, eine weitere Bücke von IC Pin 3 weiter bis IC Pin 18. Siehe Bild_7, Bild_8, Bild_16 und Bild_17
+ 
+Jetzt ein Silberdraht über IC Pin 5 Oberseite der Platine weiter bis unterhalb der Platine für den Anschluss J1 und J2. Siehe Bild_7, Bild_8, Bild_18 und Bild_19
+ 
+Eine Stiftleisten mit 3 Stiften abschneiden und neben der Batterieanschlussbuchse fixieren für J1 und J2. Siehe Bild_7, Bild_8, Bild_20
+und auf der Lötseite den mittleren Stift zwischen J1 und J2 verlöten. Siehe Bild_21
+ 
+IC Fassung einsetzen und nur Pin 3, 5, 18 und die Öse auf der Vorderseite der Platine um Pin 9 löten. Siehe Bild_7, Bild_8, Bild_22 bis Bild_24
+ 
+Verlegung der Versorgungsspannug Masse
+Am Anfang vom Silberdraht biegen wir eine kleine Öse die um den Pin Massepol der Batterieanschlussbuchse gelegt wird kurz nach der Öse den Silberdraht biegen
+und auf der Lötseite weiter bis IC Fassung Pin 10, 1, 2 und 4. Siehe Bild_7, Bild_8, Bild_25 und Bild_26
+ 
+Verlegung der Versorgungsspannug Plus
+Am Anfang vom Silberdraht biegen wir eine kleine Öse die um den Pin Pluspol der Batterieanschlussbuchse gelegt wird kurz nach der Öse den Silberdraht biegen
+und auf der Lötseite weiter bis J1 und weiter bis Vin für die Buchsenleite MDBT42Q. Siehe Bild_7, Bild_8, Bild_27 und Bild_28
+ 
+Jetzt eine Brücke von J2 bis 3,3v Buchsenleite MDBT42Q. Siehe Bild_7, Bild_8, Bild_29 und Bild_30
+ 
+Jetzt kommt unser gebauter Dummy zum Einsatz.
+Wir nehmen den Dummy und verbinden ihn mit der Platine 2 mit einem Gummiband. Siehe Bild_31
+Zuerst verlöten wir Pin 11 von der IC Fassung mit Pin D26 vom MDBT42Q, und Pin 8 von der IC Fassung mit Pin D14 vom MDBT42Q.
+Danach entfernen wir das Gummiband und verlöten die restlichen Pin's von der IC Fassung mit Pin's vom Dummy MDBT42Q. Siehe Bild_5, Bild_6, Bild_31 und Bild_32
+ 
+Jetzt kommt die Masse Brücke nach Masse vom MDBT42Q. Siehe Bild_32 und Bild_33
+ 
+Fertig Hurra!
+ 
+Jetzt alle Verbindungen Überprüfen. Siehe Bild_5, Bild_6, Bild_7 und Bild_8
+ 
+Spannung über die Jamper einstellen.
+ 
+2 Versorgungsspannugen 3,0 bis 5,0 Volt und über 5 Volt bis 16,0 Volt. Siehe Bild_7 und Bild_8
+ 
+3,0 bis 5,0 Volt J1 setzen, das Display wird mit 3,0 bis 5,0 Volt versorgt. Stromaufnahme bei 3V ca. 20mmA, bei 5V ca. 40mmA. Siehe Bild_35
+ 
+über 5 Volt bis 16,0 Volt Jumper J2 setzen, das Display wird mit 3,3 Volt vom MDBT42Q. Siehe Bild_34
+ 
+Eine einfache Prüfung bevor wir das Display und den MDBT42Q einsetzen.
+Wir legen an der Batterieanschlussbuchse einmal 3,0 bis 5,0 Volt an. Jumper J1, Siehe Bild_35
+Spannung messen zwischen Masse und Plus. Siehe Bild_6, Bild_7 und Bild_8
+ 
+Und auch mit über 5 Volt bis 16,0 Volt . Jumper J2, Siehe Bild_34
+Nun können wir aber nur die Spannung Vin am MDBT42Q messen.
+Das Display bekommt ja 3.3v vom MDBT42Q der noch nicht eingesetzt ist.
+ 
+Wenn alles in Ordnung ist können wir das Display und den MDBT42Q einsetzen.
+ 
+Nachdem die Software Installiert ist dauert es eine kleine weile bis die Temperatur angezeigt wird.
+Zum Schluss mit save() abspeichern
+ 
+Viel Spaß wünscht Reinhard.
+ 
+Hier die Software
+ 
+ 
+// Temperatur MDBT42Q und DL 2416T
+var d;var e;var t;var a;var b;var c;var t;
+ 
+function Stelle_1(){
+a = a;
+digitalWrite(D16,1);digitalWrite(D14,1);digitalWrite(D15,1);
+}
+ 
+function Stelle_2(){
+a = b;
+digitalWrite(D16,1);digitalWrite(D14,0);digitalWrite(D15,1);
+}
+ 
+function Stelle_4(){
+a = c;
+digitalWrite(D16,1);digitalWrite(D14,0);digitalWrite(D15,0);
+}
+ 
+function onTimer() {
+ 
+// 3.Stelle
+ 
+digitalWrite(D16,1);digitalWrite(D14,1);digitalWrite(D15,0);
+ 
+digitalWrite(D3,0);digitalWrite(D31,1);digitalWrite(D30,1);digitalWrite(D29,1);
+digitalWrite(D26,0);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0);
+ 
+t = E.getTemperature().toFixed(1);
+ 
+//print (t);
+ 
+var simpleString = (t);
+a = simpleString.substring(0, 1);
+b = simpleString.substring(1, 2);
+c = simpleString.substring(3, 4);
+ 
+function wert(){
+ 
+if (a == 0) {
+digitalWrite(D3,0);digitalWrite(D31,0);digitalWrite(D30,0);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 1) {
+digitalWrite(D3,1);digitalWrite(D31,0);digitalWrite(D30,0);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 2) {
+digitalWrite(D3,0);digitalWrite(D31,1);digitalWrite(D30,0);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 3) {
+digitalWrite(D3,1);digitalWrite(D31,1);digitalWrite(D30,0);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 4) {
+digitalWrite(D3,0);digitalWrite(D31,0);digitalWrite(D30,1);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 5) {
+digitalWrite(D3,1);digitalWrite(D31,0);digitalWrite(D30,1);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 6) {
+digitalWrite(D3,0);digitalWrite(D31,1);digitalWrite(D30,1);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 7) {
+digitalWrite(D3,1);digitalWrite(D31,1);digitalWrite(D30,1);digitalWrite(D29,0);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 8) {
+digitalWrite(D3,0);digitalWrite(D31,0);digitalWrite(D30,0);digitalWrite(D29,1);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+if (a == 9) {
+digitalWrite(D3,1);digitalWrite(D31,0);digitalWrite(D30,0);digitalWrite(D29,1);
+digitalWrite(D26,1);digitalWrite(D27,1);digitalWrite(D28,0);digitalWrite(D16,0); }
+ 
+}
+ 
+Stelle_1();
+wert();
+ 
+Stelle_2();
+wert();
+ 
+Stelle_4();
+ 
+wert();
+ 
+print (t);
+ 
+}
+ 
+setInterval(onTimer,30000); onTimer();
 
 <html>  
