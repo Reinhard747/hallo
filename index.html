@@ -1,73 +1,103 @@
-
-<!DOCTYPE html>
 <html lang="de">
-<head>
-
-<meta charset="utf-8">
-<link rel="stylesheet" href="style.css">
-
-
-
-<head>
-
-    
-
-    <script src="https://www.puck-js.com/puck.js"></script>
-
-<body>
-
-    
-
-    <div id="überschrift">
-        <div id="logo1">
-        <p>Ella's Auto</p>
-        </div>
-        </div>
-        <hr /> 
-        <button style="margin-top: 100px;margin-left: 100px;height: 200px; width: 700px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D14.reset();D15.reset();D16.reset();D17.reset();D18.reset();D19.reset();D20.reset();D22.reset();\n');">Stop</button>
-
-            
-        <button style="margin-top: -20px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D19.reset();D17.reset();D22.reset();D15.reset();D18.set();D16.set();D20.set();D14.set();\n');">vorwärts</button>
-     
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D18.reset();D16.reset();D20.reset();D14.reset();\n');">vorwärts Stop</button>
-        
-        <hr />    
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D18.reset();D16.reset();D20.reset();D14.reset();D19.set();D17.set();D22.set();D15.set();\n');">rückwärts</button>
-     
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D19.reset();D17.reset();D22.reset();D15.reset();\n');">rückwärts Stop</button>
-        
-        <hr /> 
-        <hr /> 
-
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D22.reset();D19.reset();D16.reset();D14.reset();D20.set();D18.set();\n');">rechts</button>
-     
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D20.reset();D18.reset();\n');">rechts Stop</button>
-    
-        <hr /> 
-        <hr /> 
-       
-    
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D18.reset();D16.reset();D20.reset();D14.reset();D16.set();D14.set();\n');">links</button>
-        
-        <button style="margin-top: 50px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D16.reset();D14.reset();\n');">links Stop</button>
-        
-        <hr /> 
-        <hr />
-
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D22.set();D18.set();D16.set();D15.set();\n');">quer rechts</button>
-        
-        <button style="margin-top: 50px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D22.reset();D18.reset();D16.reset();D15.reset();\n');">quer rechts Stop</button>
-        
-        <hr /> 
-        <hr />
-
-        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D20.set();D19.set();D17.set();D14.set();\n');">quer links</button>
-        
-        <button style="margin-top: 50px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D20.reset();D19.reset();D17.reset();D14.reset();\n');">quer links Stop</button>
-        
-
-
-
-     
-
-</body><html>  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Esp8266 Slider</title>
+    <style>
+      .container {
+        width: 300px;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        padding-top: 60px;
+      }
+      .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 25px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        transition: opacity .2s;
+      }
+      .slider:hover {
+        opacity: 1;
+      }
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 50px;
+        background: #888;
+        cursor: pointer;
+      }
+      .slider::-moz-range-thumb {
+        width: 25px;
+        height: 50px;
+        background: #888;
+        cursor: pointer;
+      }
+      svg {
+        height: 7em;
+      }
+    </style>
+    <script>
+      // Werte für optisch lineares Faden einer LED https://www.mikrocontroller.net/articles/LED-Fading
+      const pwmtable = [0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 5, 5, 6, 6, 7, 8, 9,
+        10, 11, 12, 13, 15, 17, 19, 21, 23, 26, 29, 32, 36, 40, 44, 49, 55,
+        61, 68, 76, 85, 94, 105, 117, 131, 146, 162, 181, 202, 225, 250,
+        279, 311, 346, 386, 430, 479, 534, 595, 663, 739, 824, 918, 1023
+      ];
+      window.addEventListener('DOMContentLoaded', async () => {
+		const response = await fetch('/do');
+        const txt = await response.text();	  
+        const slider = document.querySelector('input');
+        const r = document.getElementById('radial');
+        const l = document.getElementById('light');
+		pwmtable.forEach((v, i) => {
+          if (txt == v) {
+            slider.value = i;
+            r.setAttribute("r", i * 3.2 + 1);
+            l.setAttribute("opacity", 0.3 + i / 85);
+          }
+        });
+        slider.max = pwmtable.length - 1;
+        slider.addEventListener('input', () => {
+          pwmtable.forEach((v, i) => {
+            if (slider.value == i) {
+              fetch('/do?set=' + v);
+              r.setAttribute("r", i * 3.2 + 1);
+              l.setAttribute("opacity", 0.3 + i / 85);
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>ESP8266 PWM</h1>
+    <h2>LED Dimmer</h2>
+    <svg viewBox="0 0 53 53">
+      <defs>
+        <linearGradient id="linear" x1="179" x2="213" y1="244" y2="259" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#fff" offset="0" />
+          <stop stop-color="#fff" stop-opacity="0" offset="1" />
+        </linearGradient>
+        <radialGradient id="radial" cx="32.4" cy="273" r="0" gradientTransform="matrix(-.00585 -.39 .532 -.00799 -119 285)" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#ff0" offset="0" />                      <!-- gelb #ff0 grün #0f0-->
+          <stop stop-color="#ff0" stop-opacity="0" offset="1" />     <!-- gelb #ff0 grün #0f0-->
+        </radialGradient>
+      </defs>
+      <g transform="translate(0 -244)">
+        <circle cx="26.6" cy="271" r="25" fill="#b0b0b0" stroke-width=".265" />
+        <ellipse id="elip" transform="matrix(.933 .36 -.69 .724 0 0)" cx="206" cy="255" rx="5.84" ry="11.3" fill="url(#linear)" stroke-width=".478" />
+        <circle id="light" cx="26.7" cy="271" r="24" fill="url(#radial)" opacity="0" stroke-width=".249" />
+      </g>
+    </svg>
+    <div class="container">
+      <input type="range" class="slider">
+    </div>
+  </body>
+</html>
+Zurück
