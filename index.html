@@ -1,122 +1,73 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<title>Espruino WebBLE LED Dimmer</title>
 
-<style>
-  body {
-    font-family: system-ui, sans-serif;
-    background: #111;
-    color: #eee;
-    text-align: center;
-    padding: 30px;
-  }
-  h1 { margin-bottom: 10px; }
-  button {
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-  }
-  input[type=range] {
-    width: 80%;
-    margin: 20px 0;
-  }
-  .status {
-    margin-top: 15px;
-    font-weight: bold;
-  }
-</style>
-</head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
 
-<script src="https://www.puck-js.com/puck.js"></script>  
+
+
+<head>
+
+    
+
+    <script src="https://www.puck-js.com/puck.js"></script>
+
 <body>
 
-<h1>🔵 Espruino WebBLE LED</h1>
+    
 
-<button onclick="connect()">Verbinden</button>
-<button onclick="disconnect()">Trennen</button>
+    <div id="überschrift">
+        <div id="logo1">
+        <p>Ella's Auto</p>
+        </div>
+        </div>
+        <hr /> 
+        <button style="margin-top: 100px;margin-left: 100px;height: 200px; width: 700px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D14.reset();D15.reset();D16.reset();D17.reset();D18.reset();D19.reset();D20.reset();D22.reset();\n');">Stop</button>
 
-<br>
+            
+        <button style="margin-top: -20px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D19.reset();D17.reset();D22.reset();D15.reset();D18.set();D16.set();D20.set();D14.set();\n');">vorwärts</button>
+     
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D18.reset();D16.reset();D20.reset();D14.reset();\n');">vorwärts Stop</button>
+        
+        <hr />    
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D18.reset();D16.reset();D20.reset();D14.reset();D19.set();D17.set();D22.set();D15.set();\n');">rückwärts</button>
+     
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D19.reset();D17.reset();D22.reset();D15.reset();\n');">rückwärts Stop</button>
+        
+        <hr /> 
+        <hr /> 
 
-<input
-  type="range"
-  min="0"
-  max="255"
-  value="0"
-  id="slider"
-  disabled
->
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D22.reset();D19.reset();D16.reset();D14.reset();D20.set();D18.set();\n');">rechts</button>
+     
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D20.reset();D18.reset();\n');">rechts Stop</button>
+    
+        <hr /> 
+        <hr /> 
+       
+    
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D18.reset();D16.reset();D20.reset();D14.reset();D16.set();D14.set();\n');">links</button>
+        
+        <button style="margin-top: 50px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D16.reset();D14.reset();\n');">links Stop</button>
+        
+        <hr /> 
+        <hr />
 
-<div>Helligkeit: <span id="value">0</span></div>
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D22.set();D18.set();D16.set();D15.set();\n');">quer rechts</button>
+        
+        <button style="margin-top: 50px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D22.reset();D18.reset();D16.reset();D15.reset();\n');">quer rechts Stop</button>
+        
+        <hr /> 
+        <hr />
 
-<div class="status" id="status">❌ Nicht verbunden</div>
+        <button style="margin-top: 30px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D20.set();D19.set();D17.set();D14.set();\n');">quer links</button>
+        
+        <button style="margin-top: 50px;margin-left: 100px;height: 100px; width: 300px; font-size: 40px; font-family: Arial;box-shadow: 0px 17px 10px -7px rgba(0,0,0,0.9);border: solid 2px black;border-radius: 15px;" onclick="Puck.write('D20.reset();D19.reset();D17.reset();D14.reset();\n');">quer links Stop</button>
+        
 
-<script>
-const SERVICE_UUID = "12345678-1234-5678-1234-56789abcdef0";
-const CHAR_UUID    = "12345678-1234-5678-1234-56789abcdef1";
 
-let device = null;
-let characteristic = null;
 
-// Verbinden
-async function connect() {
-  try {
-    device = await navigator.bluetooth.requestDevice({
-      filters: [{ services: [SERVICE_UUID] }]
-    });
-
-    device.addEventListener(
-      'gattserverdisconnected',
-      onDisconnected
-    );
-
-    const server = await device.gatt.connect();
-    const service = await server.getPrimaryService(SERVICE_UUID);
-    characteristic = await service.getCharacteristic(CHAR_UUID);
-
-    document.getElementById("slider").disabled = false;
-    setStatus("🟢 Verbunden");
-  } catch (err) {
-    setStatus("❌ Fehler");
-    console.error(err);
-  }
-}
-
-// Trennen
-function disconnect() {
-  if (device && device.gatt.connected) {
-    device.gatt.disconnect();
-  }
-}
-
-// Disconnect-Event
-function onDisconnected() {
-  document.getElementById("slider").disabled = true;
-  setStatus("❌ Getrennt");
-}
-
-// Slider → BLE schreiben
-document.getElementById("slider").addEventListener("input", async (e) => {
-  const value = Number(e.target.value);
-  document.getElementById("value").textContent = value;
-
-  if (!characteristic) return;
-
-  try {
-    await characteristic.writeValue(
-      Uint8Array.of(value)
-    );
-  } catch (err) {
-    console.error("Write error:", err);
-  }
-});
-
-function setStatus(text) {
-  document.getElementById("status").textContent = text;
-}
-</script>
+     
 
 </body>
-</html>
