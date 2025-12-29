@@ -2,27 +2,29 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
 
+<meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
- 
-<title>Puck.js WebBLE Control</title>
-<style>
- body { font-family: Arial; padding: 20px; }
- button { margin: 5px; padding: 10px 20px; }
- #log { border: 1px solid #ccc; height: 150px; overflow: auto; padding: 5px; }
-</style>
-</head>
 
-<script src="https://www.puck-js.com/puck.js"></script> 
- 
+
+
+<head>
+
+    
+
+    <script src="https://www.puck-js.com/puck.js"></script>
+
 <body>
 
-<h2>Puck.js BLE Steuerung</h2>
+    
 
-<button onclick="connect()">🔌 Verbinden</button><br><br>
-
-<button onclick="send('LED1.set()')">🔴 Rot AN</button>
+    <div id="überschrift">
+        <div id="logo1">
+        <p>Ella's Auto</p>
+        </div>
+        </div>
+        <hr /> 
+        <button onclick="send('LED1.set()')">🔴 Rot AN</button>
 <button onclick="send('LED1.reset()')">🔴 Rot AUS</button><br>
 
 <button onclick="send('LED2.set()')">🟢 Grün AN</button>
@@ -30,54 +32,9 @@
 
 <button onclick="send('LED3.toggle()')">🔵 Blau TOGGLE</button><br><br>
 
-<button onclick="send('Puck.write(Puck.getBatteryPercentage()+\"%\\n\")')">
-🔋 Batterie
-</button>
 
-<h3>📥 Empfang</h3>
-<pre id="log"></pre>
 
-<script>
-let tx, rx;
 
-async function connect() {
- const device = await navigator.bluetooth.requestDevice({
-   filters: [{ namePrefix: 'Puck' }],
-   optionalServices: ['6e400001-b5a3-f393-e0a9-e50e24dcca9e']
- });
-
- const server = await device.gatt.connect();
- const service = await server.getPrimaryService(
-   '6e400001-b5a3-f393-e0a9-e50e24dcca9e'
- );
-
- tx = await service.getCharacteristic(
-   '6e400002-b5a3-f393-e0a9-e50e24dcca9e'
- );
- rx = await service.getCharacteristic(
-   '6e400003-b5a3-f393-e0a9-e50e24dcca9e'
- );
-
- await rx.startNotifications();
- rx.addEventListener('characteristicvaluechanged', e => {
-   document.getElementById("log").textContent +=
-     new TextDecoder().decode(e.target.value);
- });
-
- log("✔ Verbunden\n");
-}
-
-function send(cmd) {
- if (!tx) return alert("Nicht verbunden!");
- tx.writeValue(
-   new TextEncoder().encode(cmd + "\n")
- );
-}
-
-function log(text) {
- document.getElementById("log").textContent += text;
-}
-</script>
+     
 
 </body>
-</html>
