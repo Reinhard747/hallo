@@ -6,7 +6,11 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
 
-
+<style>
+ body { font-family: Arial; padding: 20px; }
+ button { margin: 5px; padding: 10px 20px; }
+ #log { border: 1px solid #ccc; height: 150px; overflow: auto; padding: 5px; }
+</style>
 
 <head>
 
@@ -33,6 +37,8 @@
 <button onclick="Puck.write('D1.set();\n');">🔴 Rot AN</button>
 <button onclick="Puck.write('D1.reset();\n');">🔴 Rot AUS</button><br>
 
+<button onclick="send('LED2.set()')">🟢 Grün AN</button>
+<button onclick="send('LED2.reset()')">🟢 Grün AUS</button><br>
 
 
 
